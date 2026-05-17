@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  namespace: monitoring
+  name: backend-promehteus
+spec:
+  podMonitorSelector:
+    matchLabels:
+      monitoring: backend
+  shards: 1
+  replicas: 2
+  resources:
+    requests:
+      memory: 400Mi
+  scrapeInterval: 30s
+  serviceAccountName: prometheus

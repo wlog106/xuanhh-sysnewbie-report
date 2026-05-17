@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  namespace: www-test
+  name: test
+  labels:
+    monitoring: test
+spec:
+  selector:
+    matchLabels:
+      env: test
+  podMetricsEndpoints:
+    - port: metrics

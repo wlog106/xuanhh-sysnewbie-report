@@ -1,0 +1,14 @@
+apiVerison: v1
+kind: Namespace
+metadata:
+  name: www-test
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: www-prod
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring

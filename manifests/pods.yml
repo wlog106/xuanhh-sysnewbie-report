@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: www-test
+  labels:
+    app: frontend
+    env: test
+spec:
+  containers:
+    - name: frontend
+      image: ealen/echo-server:latest
+      ports:
+        - containerPort: 80
+          name: metrics
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  namespace: www-test
+  labels:
+    app: backend
+    env: test
+spec:
+  containers:
+    - name: backend
+      image: ealen/echo-server:latest
+      ports:
+        - containerPort: 80
+          name: metrics
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: www-prod
+  labels:
+    app: frontend
+    env: prod
+spec:
+  containers:
+    - name: frontend
+      image: ealen/echo-server:latest
+      ports:
+        - containerPort: 80
+          name: metrics
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  namespace: www-prod
+  labels:
+    app: backend
+    env: test
+spec:
+  containers:
+    - name: backend
+      image: ealen/echo-server:latest
+      ports:
+        - containerPort: 80
+          name: metrics
