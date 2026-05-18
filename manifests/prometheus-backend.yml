@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
   namespace: monitoring
-  name: backend-promehteus
+  name: backend
 spec:
   podMonitorSelector:
     matchLabels:

@@ -13,5 +13,5 @@ spec:
     matchNames:
       - "www-test"
       - "www-prod"
-  podMonitorEndpoints:
+  podMetricsEndpoints:
     - port: metrics

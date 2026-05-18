@@ -1,19 +1,19 @@
 apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
-  namespace: monitoring
-  name: prod-promehteus
+    namespace: monitoring
+    name: prod
 spec:
-  podMonitorSelector:
-    matchLabels:
-      monitoring: prod
-  podMonitorNamespaceSelector:
-    matchNames:
-      - "www-prod"
-  shards: 1
-  replicas: 2
-  resources:
-    requests:
-      memory: 400Mi
-  scrapeInterval: 30s
-  serviceAccountName: prometheus
+    podMonitorSelector:
+        matchLabels:
+            monitoring: prod
+    podMonitorNamespaceSelector:
+        matchLabels:
+            env: prod
+    shards: 1
+    replicas: 2
+    resources:
+        requests:
+            memory: 400Mi
+    scrapeInterval: 30s
+    serviceAccountName: prometheus

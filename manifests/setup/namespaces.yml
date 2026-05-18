@@ -1,14 +1,18 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: www-test
+    name: www-test
+    labels:
+        env: test
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: www-prod
+    name: www-prod
+    labels:
+        env: prod
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: monitoring
+    name: monitoring
