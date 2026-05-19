@@ -18,5 +18,5 @@ kubectl create -f manifests/
 ```
 ### Reference
 - [prometheus-operator official website](https://prometheus-operator.dev/)
-- [prometheus-operator github page](https://github.com/prometheus-operator/prometheus-operator)
-- [kube-prometheus github page](https://github.com/prometheus-operator/kube-prometheus)
+- [prometheus-operator github repo](https://github.com/prometheus-operator/prometheus-operator)
+- [kube-prometheus github repo](https://github.com/prometheus-operator/kube-prometheus)
