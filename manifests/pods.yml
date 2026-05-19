@@ -9,9 +9,9 @@ metadata:
 spec:
   containers:
     - name: frontend
-      image: ealen/echo-server:latest
+      image: stefanprodan/podinfo:latest
       ports:
-        - containerPort: 80
+        - containerPort: 9898
           name: metrics
 ---
 apiVersion: v1
@@ -25,9 +25,9 @@ metadata:
 spec:
   containers:
     - name: backend
-      image: ealen/echo-server:latest
+      image: stefanprodan/podinfo:latest
       ports:
-        - containerPort: 80
+        - containerPort: 9898
           name: metrics
 ---
 apiVersion: v1
@@ -41,9 +41,9 @@ metadata:
 spec:
   containers:
     - name: frontend
-      image: ealen/echo-server:latest
+      image: stefanprodan/podinfo:latest
       ports:
-        - containerPort: 80
+        - containerPort: 9898
           name: metrics
 ---
 apiVersion: v1
@@ -53,11 +53,11 @@ metadata:
   namespace: www-prod
   labels:
     app: backend
-    env: test
+    env: prod
 spec:
   containers:
     - name: backend
-      image: ealen/echo-server:latest
+      image: stefanprodan/podinfo:latest
       ports:
-        - containerPort: 80
+        - containerPort: 9898
           name: metrics

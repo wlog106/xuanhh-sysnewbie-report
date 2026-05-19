@@ -7,6 +7,9 @@ spec:
   podMonitorSelector:
     matchLabels:
       monitoring: backend
+  ruleSelector:
+    matchLabels:
+      monitoring: backend
   shards: 1
   replicas: 2
   resources:
@@ -14,3 +17,17 @@ spec:
       memory: 400Mi
   scrapeInterval: 30s
   serviceAccountName: prometheus
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: monitoring
+  name: prometheus-backend
+spec:
+  ports:
+    - name: web
+      port: 9090
+      protocol: TCP
+      targetPort: web
+  selector:
+    prometheus: backend

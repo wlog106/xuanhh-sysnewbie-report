@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: backend-rules
+  namespace: monitoring
+  labels:
+    monitoring: backend
+spec:
+  groups:
+    - name: "filesystem-alert"
+      rules:
+        - alert: "filesystem usage > 50%"
+          for: 1m
+          keep_firing_for: 5m
+          expr: "(node_filesystem_size_bytes{job=\"monitoring/backend\"}\
+            -node_filesystem_avail_bytes{job=\"monitoring/backend\"})/\
+            node_filesystem_size_bytes{job=\"monitoring/backend\"}*100 <= 50"
