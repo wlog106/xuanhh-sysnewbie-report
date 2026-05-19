@@ -4,6 +4,7 @@ The following resources will be created after setup.
 - prometheus-operator and all the CRDs managed by it
 - basic RBAC settings for prometheus-operator and prometheus
 - all the resources shown in the high level diagram
+- an additional prometheusRule-backend resource
 #### Note
 This repo is not mean to be used for bootstrapping monitoring stack.  
 Therefore, the lack of some critical components is as expected.
