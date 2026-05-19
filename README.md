@@ -6,7 +6,7 @@ The following resources will be created after setup.
 - all the resources shown in the high level diagram
 - an additional prometheusRule-backend resource
 #### Note
-This repo is not mean to be used for bootstrapping monitoring stack.  
+This repo is not mean to be used for creating monitoring stack.  
 Therefore, the lack of some critical components is as expected.
 ### Environment Setup
 ```
